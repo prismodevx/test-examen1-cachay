@@ -39,6 +39,16 @@ public class FirstFragment extends Fragment {
             }
         });
 
+        binding.btnJugarGolpeado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nombreFF = binding.edtNombre.getText().toString();
+                FirstFragmentDirections.ActionFirstFragmentToGolpeadoFragment action =
+                        FirstFragmentDirections.actionFirstFragmentToGolpeadoFragment(nombreFF);
+                NavHostFragment.findNavController(FirstFragment.this).navigate(action);
+            }
+        });
+
 //        binding.btnJugarAdvNumero.setOnClickListener(v ->
 //                NavHostFragment.findNavController(FirstFragment.this)
 //                        .navigate(R.id.action_FirstFragment_to_SecondFragment)
